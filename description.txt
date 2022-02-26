@@ -1,0 +1,6 @@
+For .svg file you need a help of ui/ux designs.
+1. For which parts svg file you need, you just need
+to select that particular part.
+2. Then, from menu you have to go to export option.
+3. Then select svg and embeded and change the location
+to you html files location and then export it.

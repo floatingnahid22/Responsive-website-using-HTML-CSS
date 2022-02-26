@@ -68,14 +68,15 @@ section {
     h1 {
         font-size: 2.5em;
         line-height: 1.3em;
+        margin-top: .2em;
     }
     .primary-cta {
         background: var(--primary-color);
         color: white;
         text-decoration: none;
-        padding: .6em;
+        padding: .6em 1.3em;
         font-size: 1.4em;
-        border-radius: 2em;
+        border-radius: 5em;
         font-weight: bold;
         display: inline-block;
     }
@@ -103,7 +104,7 @@ ul.features-list {
     margin: 0;
     padding-left: .1em;
     display: grid;
-
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
     li {
         font-size: 1.1em;
@@ -144,7 +145,7 @@ ul.features-list {
             width: 5em;
             height: 5em;
             border: 5px solid #006BD6;
-            border-radius: 5em ;
+            border-radius: 50% ;
             margin-top: -4.5em;
         }
     }
@@ -175,9 +176,9 @@ input[type="submit"] {
     font-weight: bold;
     font-size: 1.3em;
     border: none;
-    margin-bottom: 4em;
-    border-radius: 4em;
-    display: block;
+    margin-bottom: 5em;
+    border-radius: 5em;
+    display: inline-block;
     padding: .8em 2em;
     width: unset;
     cursor: pointer;
@@ -227,4 +228,178 @@ nav {
     float: right;
     margin: .5em;
     cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    
+    .mobile-menu, .mobile-menu-exit {
+        display: none;
+    }
+
+    .navbar .container {
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+    }
+
+    .navbar nav {
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+
+        ul {
+            display: flex;
+        }
+
+        a {
+            color: black;
+            font-size: 1em;
+            padding: .1em 1em;
+        }
+
+        ul.primary-nav {
+            margin: 0;
+        }
+
+        li.current a {
+            font-weight: bold;
+        }
+        li.go-premium-cta a {
+            color: var(--primary-color);
+            border: 3px solid var(--primary-color);
+            font-weight:  bold;
+            border-radius: 5em;
+            margin-top: -.2em;
+
+            &:hover {
+                background: var(--primary-color) ;
+                color: white;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .container {
+        width:  1080px;
+        margin: 0 auto;
+    }
+
+    section {
+        padding: 10em 4em;
+    }
+
+    .hero .container {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+
+        .left-col {
+            margin: 3em 3em 0 5em;
+
+            h1 {
+                font-size: 3em;
+                width: 90%;
+            }
+        }
+    }
+
+    .hero-img {
+        width: 30%;
+        margin-right: 8em;
+    }
+
+    .hero-cta {
+        display: flex;
+    }
+
+    .primary-cta {
+        margin-right: 1em;
+    }
+
+
+    ul.features-list {
+        display: block;
+        margin-left: 5em; 
+
+        li {
+            font-size: 1.4em;
+
+            &:hover {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    .features-section {
+        position: relative;
+    }
+
+    .features-section img {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 350px;
+        bottom: -2em;
+    }
+
+    .testimonial-section {
+        display: flex;
+
+        li {
+            margin: 0 1em;
+        }
+    }
+
+    .contact-section {
+        position: relative;
+
+        .container {
+            display: flex;
+        }
+    }
+
+    .contact-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 45%;
+        height: 100%;
+
+        iframe {
+            height: 100%;
+        }
+    }
+}    
+
+@media only screen and (min-width: 1450px) {
+    .features-section {
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 10%;
+            height: 20em;
+            background: var(--primary-color);
+            left: 0;
+            top: -4em;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 20em;
+            background: url('../images/dots.svg') no-repeat;
+            left: 4.5em;
+            top: 2em;
+        }
+
+    
+    }
 }
